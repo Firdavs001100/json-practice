@@ -76,29 +76,36 @@ const theDataOfFish = {
 // console.log(theDataOfChicken, theDataOfBeef, theDataOfFish);
 
 
+var theData = theDataOfChicken;
+var theName = recipe[0].name;
+
 app.post("/recipe", (req, res) => {
   var theChicken = req.body["chicken"];
   var theBeef = req.body["beef"];
   var theFish = req.body["fish"];
-  
+
+  if (theChicken) {
+    theData = theDataOfChicken
+    theName = recipe[0].name
+  } else if (theBeef) {
+    theData = theDataOfBeef
+    theName = recipe[1].name
+  } else if (theFish) {
+    theData = theDataOfFish
+    theName = recipe[2].name
+  };
 
 //  console.log(theData,theName);
   
   //Step 3: Write your code here to make this behave like the solution website.
   //Step 4: Add code to views/index.ejs to use the recieved recipe object.
   res.render("index.ejs", {
-    name0: the0Name,
-    name1: the1Name,
-    name2: the2Name,
-
     chicken: theChicken,
     beef: theBeef,
     fish: theFish,
-    
 
-    dataOfChicken: theDataOfChicken,
-    dataOfBeef: theDataOfBeef,
-    dataOfFish: theDataOfFish
+    data: theData,
+    name: theName
   })
 });
 

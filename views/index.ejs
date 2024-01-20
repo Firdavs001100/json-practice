@@ -15,37 +15,20 @@
     <button type="submit" value="fish" name="fish">🐟</button>
   </form>
   <div id="recipeContainer" class="hidden">
-
-    <!-- If no recipe yet, show: -->
-    <% if (locals.name0) { %>
-      <h2> <%= name0 %></h2>
+    <% if (locals.name) { %>
+      <h2> <%= name %></h2>
       <h3>Ingredients:</h3>
       <ul id="ingredientsList">
-        <% if (chicken === "chicken") { %>
-          <li> <%= dataOfChicken.ingredients %></li>
-          <li> <%= dataOfChicken.salsa %></li>
-          <li> <%= dataOfChicken.toppings.topping0 %></li>
-          <li> <%= dataOfChicken.toppings.topping1 %></li>
-          <li> <%= dataOfChicken.toppings.topping2 %></li>
-          <li> <%= dataOfChicken.toppings.topping3 %></li>
-          <% } else if (beef === "beef") { %>
-            <li> <%= dataOfBeef.ingredients %></li>
-            <li> <%= dataOfBeef.salsa %></li>
-            <li> <%= dataOfBeef.toppings.topping0 %></li>
-            <li> <%= dataOfBeef.toppings.topping1 %></li>
-            <li> <%= dataOfBeef.toppings.topping2 %></li>
-            <% } else if (fish === "fish") { %>
-              <li> <%= dataOfFish.ingredients %></li>
-              <li> <%= dataOfFish.salsa %></li>
-              <li> <%= dataOfFish.toppings.topping0 %></li>
-              <li> <%= dataOfFish.toppings.topping1 %></li>
-              <li> <%= dataOfFish.toppings.topping2 %></li>
-            <% } %>  
+        <li> <%= data.ingredients %></li>
+        <li> <%= data.salsa %></li>
+        <li> <%= data.toppings.topping0 %></li>
+        <li> <%= data.toppings.topping1 %></li>
+        <li> <%= data.toppings.topping2 %></li>
+        <li> <%= data.toppings.topping3 %></li>
       </ul>
     <% } else { %>
       <h2>Pick your favourite taco ingredient 👆</h2>
     <% } %>
-    <!-- Else, show the recipe name e.g. <h2>Recipe name</h2>-->
   </div>
 </body>
 
