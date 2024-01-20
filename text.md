@@ -39,3 +39,5 @@ if (theChicken) {
   };
 
 <!-- THIS ONE IS INSIDE RES.RENDER (IN APP.POST), RENDERED AS AN OUTPUT TO AN EJS TEMPLATE-->
+data: theData,
+name: theName,

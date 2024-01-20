@@ -73,10 +73,7 @@ const theDataOfFish = {
     topping2 : the2Toppings2
   }
 };
-
 // console.log(theDataOfChicken, theDataOfBeef, theDataOfFish);
-
-
 
 
 app.post("/recipe", (req, res) => {
